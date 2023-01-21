@@ -31,11 +31,14 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  zsh-syntax-highlighting
   zsh-history-enquirer
   git
   brew
   # chucknorris
   zsh-autosuggestions
+  history
+  sudo
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -43,5 +46,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias ll='colorls -lA --sd --group-directories-first'
+alias ls='colorls --group-directories-first'
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=36:*.rpm=90'
+export LS_COLORS
