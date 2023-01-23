@@ -57,6 +57,7 @@ lvim.builtin.gitsigns.opts.current_line_blame = true;
 -- Use which-key to add extra bindings with the leader-key prefix
 lvim.builtin.which_key.mappings["k"] = { "<cmd>Telescope buffers<CR>", "Search Buffers" }
 lvim.builtin.which_key.mappings["g"] = { "<cmd>Telescope grep_string<CR>", "Grep in dir" }
+lvim.builtin.which_key.mappings["w"] = { "<Plug>(easymotion-bd-w)", "doing sth" }
 -- lvim.builtin.which_key.mappings["t"] = {
 --   name = "+Trouble",
 --   r = { "<cmd>Trouble lsp_references<cr>", "References" },
@@ -161,7 +162,7 @@ lvim.plugins = {
     end
   },
   { "tpope/vim-eunuch" },
-  -- { "github/copilot.vim" },
+  { "github/copilot.vim" },
   {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
@@ -177,7 +178,8 @@ lvim.plugins = {
         }
       }
     end
-  }
+  },
+  { "easymotion/vim-easymotion" }
 }
 
 vim.api.nvim_create_autocmd("BufWritePre", {

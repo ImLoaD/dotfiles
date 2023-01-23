@@ -35,6 +35,8 @@ export VISUAL=nvim
 export EDITOR=nvim
 export PATH="$PATH:/usr/local/sbin:$DOTFILES/bin:$HOME/.local/bin"
 
+export ZSH="/Users/imload/.oh-my-zsh"
+
 export PATH="$PATH:$HOME/Develope/flutter/bin"
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$PATH:/Users/imload/go/bin/
@@ -50,24 +52,6 @@ eval "$(starship init zsh)"
 # bindkey -v
 bindkey '^?' backward-delete-char
 
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  zsh-history-enquirer
-  zsh-syntax-highlighting
-  git
-  brew
-  # chucknorris
-  zsh-autosuggestions
-  extract
-  history
-  sudo
-)
-
 # function zle-line-init zle-keymap-select {
 #     VIM_PROMPT="%{$fg[yellow]%}[% NORMAL]% %{$reset_color%}"
 #     RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}"
@@ -80,3 +64,12 @@ plugins=(
 # END VIM MODE ----------------------------------------------------------------
 
 #eval "$(lua ~/bin/z.lua --init zsh)"
+#
+
+
+source $ZSH/oh-my-zsh.sh
+
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
