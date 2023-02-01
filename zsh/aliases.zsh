@@ -145,3 +145,7 @@ copy-line () {
 open-at-line () {
   vim $(rg --line-number "${1:-.}" | sk --delimiter ':' --preview 'bat --color=always --highlight-line {2} {1}' | awk -F ':' '{print "+"$2" "$1}')
 }
+
+alias nv14="nvm use 14"
+alias nv8="nvm use 8"
+alias nv18="nvm use 18"
