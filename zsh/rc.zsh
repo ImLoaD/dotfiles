@@ -73,3 +73,44 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+#
+# Run 'nvm use' automatically every time there's 
+# a .nvmrc file in the directory. Also, revert to default 
+# version when entering a directory without .nvmrc
+#
+enter_directory() {
+  if [[ -z $PREV_PWD ]]; then
+    PREV_PWD="/"
+  fi
+
+  if [[ $PWD == $PREV_PWD ]]; then
+    return
+  fi
+
+  if [[ $PWD =~ $PREV_PWD && ! -f ".nvmrc" ]]; then
+    return
+  fi
+
+  PREV_PWD=$PWD
+  if [[ -f ".nvmrc" ]]; then
+    nvm use
+    NVM_DIRTY=true
+  elif [[ $NVM_DIRTY = true ]]; then
+    nvm use default
+    NVM_DIRTY=false
+  fi
+}
+
+enter_on_init() {
+  if [[ ! -f ".nvmrc" ]]; then
+    return
+  fi
+
+  enter_directory
+}
+
+# add hook when directory changed
+add-zsh-hook chpwd enter_directory
+
+# run after terminal init
+enter_on_init
