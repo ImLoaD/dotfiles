@@ -75,6 +75,10 @@ key_bindings:
   - { key: Q,      mods: Command,         action: Quit             }
   - { key: W,      mods: Command,         action: Quit             }
   - { key: F,      mods: Command|Control, action: ToggleFullscreen }
+  - { key: Left,   mods: Alt,             chars: "\x1bb" }
+  - { key: Right,  mods: Alt,             chars: "\x1bf" }
+  - { key: Left,   mods: Command,         chars: "\x1bOH" }
+  - { key: Right,  mods: Command,         chars: "\x1bOF" }
 
 # Nord Theme
 # colors:
