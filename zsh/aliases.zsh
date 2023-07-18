@@ -12,6 +12,7 @@ alias vim='lvim -w ~/.vimlog "$@"'
 alias zn='vim $NOTES_DIR/$(date +"%Y%m%d%H%M.md")'
 
 alias ta='tmux attach -t'
+alias t='tmux'
 
 alias l='exa -lah'
 alias ls=exa

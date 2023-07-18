@@ -114,3 +114,7 @@ add-zsh-hook chpwd enter_directory
 
 # run after terminal init
 enter_on_init
+
+
+# Load Angular CLI autocompletion.
+# source <(npx ng completion script)
