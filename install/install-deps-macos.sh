@@ -32,3 +32,8 @@ brew install neovim
 brew install alacritty
 
 # brew install starship
+
+brew install yqrashawn/goku/goku
+brew install --cask karabiner-elements
+brew install --cask keyboard-maestro
+brew install --cask raycast
