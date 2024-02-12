@@ -66,6 +66,16 @@ bindkey '^?' backward-delete-char
 #eval "$(lua ~/bin/z.lua --init zsh)"
 #
 
+# PYENV
+# Load pyenv automatically by appending
+# the following to
+# ~/.zprofile (for login shells)
+# and ~/.zshrc (for interactive shells) :
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 
 source $ZSH/oh-my-zsh.sh
 
@@ -118,3 +128,10 @@ enter_on_init
 
 # Load Angular CLI autocompletion.
 # source <(npx ng completion script)
+
+# bun completions
+[ -s "/Users/imload/.bun/_bun" ] && source "/Users/imload/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
