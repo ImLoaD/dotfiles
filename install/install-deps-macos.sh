@@ -31,4 +31,4 @@ brew install z
 brew install neovim
 brew install alacritty
 
-brew install starship
+# brew install starship
