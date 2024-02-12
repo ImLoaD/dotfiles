@@ -1,0 +1,102 @@
+{:profiles
+
+    {:goku {
+        :default true
+        :alone   50
+        :held    300
+        :delay   0
+        :sim     30
+    }}
+
+    :templates {
+        :km "osascript -e 'tell application \"Keyboard Maestro Engine\" to do script \"%s\"'"
+        :open "open \"%s\""
+        :url "osascript -e 'open location \"%s\"'"
+    }
+
+    :simlayers {
+        :w-mode {:key :w} ;; open app mode
+        :m-mode {:key :m} ;; chats
+        :c-mode {:key :c} ;; clipboard manipulations
+        :f-mode {:key :f} ;; functions and commands
+        :s-mode {:key :s} ;; move, cursors, clicks
+    }
+
+    :main [
+
+
+        {:des "j + something same time" :rules [
+            [[:j :semicolon] :!COS9] ; Raycast
+            ;; [[:j :o] :!CTOSspacebar] ; alfred
+        ]}
+
+        {:des "m-mode (message)" :rules [
+            :m-mode
+
+            [:s [:km "open: Telegram: CurrentGirlfriend"]]
+            [:u [:km "open: Telegram: Uri"]]
+            ;; [:u [:km "open: Telegram: Hood"]]
+            [:l [:km "open: Slack"]]
+
+        ]}
+
+        {:des "window-mode (apps)" :rules [
+            :w-mode
+
+            [:c [:km "open: VS Code"]]
+            [:caps_lock [:km "open: Finder"]]
+            [:e [:url "https://excalidraw.com/"]]
+            ;; [:d [:km "open: Docker"]]
+            [:d [:km "open: Discord"]]
+            [:r [:km "open: Alacritty"]]
+            [:f [:km "open: Figma"]]
+            [:g [:km "open: Things"]]
+            [:k [:km "open: Keyboard Maestro"]]
+            [:n [:km "open: Notion"]]
+            [:s [:km "open: Sublime Text"]]
+            [:t [:km "open: Telegram"]]
+        ]}
+
+        {:des "clipboard-mode" :rules [
+            :c-mode
+
+            [:g [:km "Copy and Google"]] ;; was Google clipboard
+            [:o [:km "Paste as code"]]
+            [:l [:km "Copypaste To Last Application"]]
+
+        ]}
+
+        {:des "functions and commands" :rules [
+            :f-mode
+
+            [:k [:km "edit: Karabiner"]]
+            [:g [:km "Goku Run"]]
+            [:d ["osascript -e 'tell application \"System Events\" to tell appearance preferences to set dark mode to not dark mode'"]]
+            [:v ["networksetup -connectpppoeservice 'X-K program'"]]
+            [:b ["networksetup -disconnectpppoeservice 'X-K program'"]]
+
+            ;; disable profile
+            [:p [:km "Toggle Karabiner Profiles"]]
+
+            [:t [:url "https://chat.openai.com/?model=gpt-4"]]
+
+            [:o [:km "open: Notes: Сдвиги в графике: актуальное"]]
+
+            [:i [:km "VSCode: Organize Imports"]]
+
+            [:n :!CTSn]
+
+        ]}
+
+        {:des "move, mouse, clicks" :rules [
+            :s-mode
+
+            [:##h :left_arrow]
+            [:##j :down_arrow]
+            [:##k :up_arrow]
+            [:##l :right_arrow]
+
+        ]}
+
+    ]
+}
