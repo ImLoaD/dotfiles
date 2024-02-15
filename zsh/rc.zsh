@@ -41,8 +41,6 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$PATH:/Users/imload/go/bin/
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
-eval "$(starship init zsh)"
-
 # VIM MODE (http://dougblack.io/words/zsh-vi-mode.html) -----------------------
 # bindkey -v
 bindkey '^?' backward-delete-char
@@ -77,10 +75,6 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# run after terminal init
-enter_on_init
-
 
 # Load Angular CLI autocompletion.
 # source <(npx ng completion script)
