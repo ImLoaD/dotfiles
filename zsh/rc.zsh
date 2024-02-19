@@ -41,6 +41,8 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$PATH:/Users/imload/go/bin/
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
+eval "$(starship init zsh)"
+
 # VIM MODE (http://dougblack.io/words/zsh-vi-mode.html) -----------------------
 # bindkey -v
 bindkey '^?' backward-delete-char
