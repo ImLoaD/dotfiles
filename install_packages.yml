@@ -1,0 +1,38 @@
+---
+- name: Install macOS applications and utilities
+  hosts: localhost
+  gather_facts: no
+  vars:
+    homebrew_installed_packages:
+      - fzf
+      - zsh-syntax-highlighting
+      - docker
+      - docker-compose
+      - trash
+      - jsonpp
+      - jq
+      - exa
+      - z
+      - neovim
+      - alacritty
+
+    homebrew_cask_packages:
+      - 1password
+      - alacrity
+      - slack
+      - tiles
+      - keyboard-maestro
+      - raycast
+
+  tasks:
+    - name: Install Homebrew packages
+      homebrew:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ homebrew_installed_packages }}"
+
+    - name: Install Homebrew Cask applications
+      homebrew_cask:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ homebrew_cask_packages }}"
