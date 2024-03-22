@@ -41,45 +41,19 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$PATH:/Users/imload/go/bin/
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 # VIM MODE (http://dougblack.io/words/zsh-vi-mode.html) -----------------------
 # bindkey -v
 bindkey '^?' backward-delete-char
 
-# function zle-line-init zle-keymap-select {
-#     VIM_PROMPT="%{$fg[yellow]%}[% NORMAL]% %{$reset_color%}"
-#     RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}"
-#     zle reset-prompt
-# }
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
 
-# zle -N zle-line-init
-# zle -N zle-keymap-select
-# export KEYTIMEOUT=1
-# END VIM MODE ----------------------------------------------------------------
-
-#eval "$(lua ~/bin/z.lua --init zsh)"
-#
-
-# PYENV
-# Load pyenv automatically by appending
-# the following to
-# ~/.zprofile (for login shells)
-# and ~/.zshrc (for interactive shells) :
-
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-
-source $ZSH/oh-my-zsh.sh
-
+# source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Load Angular CLI autocompletion.
-# source <(npx ng completion script)
 
 # bun completions
 [ -s "/Users/imload/.bun/_bun" ] && source "/Users/imload/.bun/_bun"
@@ -87,5 +61,8 @@ source $ZSH/oh-my-zsh.sh
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"

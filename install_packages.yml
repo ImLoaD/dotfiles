@@ -11,10 +11,15 @@
       - trash
       - jsonpp
       - jq
-      - exa
+      # - exa
       - z
       - neovim
       - alacritty
+      - yqrashawn/goku/goku
+      - nushell
+      - bun
+      
+
 
     homebrew_cask_packages:
       - 1password
@@ -23,8 +28,16 @@
       - tiles
       - keyboard-maestro
       - raycast
+      - figma
+      - miro
+      - karabiner-elements
 
   tasks:
+    - name: Add Homebrew tap for Goku
+      homebrew_tap:
+        name: yqrashawn/goku
+        state: present
+
     - name: Install Homebrew packages
       homebrew:
         name: "{{ item }}"
