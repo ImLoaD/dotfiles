@@ -17,7 +17,7 @@
       - alacritty
       - yqrashawn/goku/goku
       - nushell
-      - bun
+      - oven-sh/bun/bun
       
 
 
@@ -31,11 +31,17 @@
       - figma
       - miro
       - karabiner-elements
+      - keyboard-maestro
 
   tasks:
     - name: Add Homebrew tap for Goku
       homebrew_tap:
         name: yqrashawn/goku
+        state: present
+
+    - name: Add Homebrew tap for Bun  
+      homebrew_tap:
+        name: oven-sh/bun
         state: present
 
     - name: Install Homebrew packages
