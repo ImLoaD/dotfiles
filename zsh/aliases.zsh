@@ -14,9 +14,10 @@ alias zn='vim $NOTES_DIR/$(date +"%Y%m%d%H%M.md")'
 alias ta='tmux attach -t'
 alias t='tmux'
 
-alias l='exa -lah'
-alias ls=exa
-alias sl=exa
+# exa cannot be installed through brew
+# alias l='exa -lah'
+# alias ls=exa
+# alias sl=exa
 alias c='clear'
 alias s='source ~/.zshrc'
 alias h=heroku
