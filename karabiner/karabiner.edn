@@ -53,7 +53,7 @@
             [:g [:km "open: Things"]]
             [:k [:km "open: Keyboard Maestro"]]
             [:n [:km "open: Notion"]]
-            [:s [:km "open: Sublime Text"]]
+            [:z [:km "open: Zed"]]
             [:t [:km "open: Telegram"]]
         ]}
 
