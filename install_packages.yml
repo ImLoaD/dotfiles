@@ -31,7 +31,7 @@
       - figma
       - miro
       - karabiner-elements
-      - keyboard-maestro
+      - postman
 
   tasks:
     - name: Add Homebrew tap for Goku
