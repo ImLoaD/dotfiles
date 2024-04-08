@@ -23,7 +23,7 @@
 
     homebrew_cask_packages:
       - 1password
-      - alacrity
+      - alacritty
       - slack
       - tiles
       - keyboard-maestro
