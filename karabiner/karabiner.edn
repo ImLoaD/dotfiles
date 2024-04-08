@@ -71,7 +71,7 @@
             :f-mode
 
             [:k [:km "edit: Karabiner"]]
-            [:w [:open "/Applications/Warp.app"]]
+            [:w [:km "open: Warp"]]
             [:g [:km "Goku Run"]]
             [:d ["osascript -e 'tell application \"System Events\" to tell appearance preferences to set dark mode to not dark mode'"]]
             [:v ["networksetup -connectpppoeservice 'X-K program'"]]
@@ -85,6 +85,11 @@
             [:o [:km "open: Notes: Сдвиги в графике: актуальное"]]
 
             [:i [:km "VSCode: Organize Imports"]]
+
+
+            ;; TODO: move it inside zsh rc as function
+            [:s "latest_file=$(ls -t ~/Downloads/*.mov | head -1) && /opt/homebrew/bin/ffmpeg -i \"$latest_file\" -c:v libx264 -crf 23 -c:a aac \"${latest_file%.*}_compressed.mp4\""]
+            
 
             [:n :!CTSn]
 
