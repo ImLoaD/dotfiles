@@ -35,6 +35,7 @@
 
             [:s [:km "open: Telegram: CurrentGirlfriend"]]
             [:u [:km "open: Telegram: Uri"]]
+            [:r [:km "open: Telegram: Rus"]]
             ;; [:u [:km "open: Telegram: Hood"]]
             [:l [:km "open: Slack"]]
 
@@ -70,6 +71,7 @@
             :f-mode
 
             [:k [:km "edit: Karabiner"]]
+            [:w [:open "/Applications/Warp.app"]]
             [:g [:km "Goku Run"]]
             [:d ["osascript -e 'tell application \"System Events\" to tell appearance preferences to set dark mode to not dark mode'"]]
             [:v ["networksetup -connectpppoeservice 'X-K program'"]]
